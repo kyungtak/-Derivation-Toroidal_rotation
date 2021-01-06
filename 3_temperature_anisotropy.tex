@@ -1,0 +1,40 @@
+\chapter{Temperature anisotropy by external heating systems ICRH, ECRH}
+
+\section{Derivation from the radial force balance}
+The radial force balance equation($\nabla \bm{P}=nq(\bm{E}+\bm{v}\times\bm{B})$) for warm particles assuming no plasma flow ($\bm{v}=0$)
+\begin{equation}
+    \nabla \cdot \bm{P} -nq\bm{E}=0
+\label{force_balance}
+\end{equation}
+where the pressure tensor is expressed as CGL pressure tensor $\bm{P}=(\bm{I}-\hat{\bm{b}}\hat{b})p_\perp+\hat{\bm{b}}\hat{\bm{b}}p_\parallel+\bm{\Pi}$ and $E=-\nabla \phi$. \\
+The parallel component of Eq.(\ref{force_balance}) can be recast as 
+\begin{equation}
+    \frac{\partial p_\parallel}{\partial \theta}+\frac{p_\perp-p_\parallel}{B}\frac{\partial \bm{B}}{\partial \theta}=-N_zq_z\frac{\partial \phi}{\partial \theta}
+\label{parallel_force_balance}
+\end{equation}
+Here, we used the relation 
+\begin{equation}
+\begin{split}
+    (\nabla \cdot \bm{p})\cdot \hat{\bm{b}}=\hat{b}_k\partial_l p_{lk} &=\hat{b_k}\partial_l\big[(p_\parallel-p_\perp)\hat{b}_l\hat{b}_k+p_\perp \delta_{lk}+\Pi_{lk}\big] \\
+    &=\hat{b}_k\big[\hat{b}_l\hat{b}_k\partial_l(p_\parallel-p_\perp)+(p_\parallel-p_\perp)\partial_l(\hat{b}_l\hat{b}_k)+\partial_kp_\perp+\partial_l\Pi_{lk}\big] \\
+    &=\big[\hat{b}_l\partial_l(p_\parallel-p_\perp)+(p_\parallel-p_\perp)\underbrace{\hat{b}_k\partial_l(\hat{b}_l\hat{b}_k)}_{\text{=$\nabla \cdot \bm{b}$}}+\hat{b}_k\partial_kp_\perp+(\partial_l\Pi_{lk})\hat{b}_k\big] \\
+    &=\hat{\bm{b}}\cdot\nabla p_\parallel+(p_\parallel-p_\perp)\nabla \cdot \hat{\bm{b}}+(\nabla \cdot \bm{\Pi})\cdot \hat{\bm{b}}
+\end{split}
+\end{equation}
+But, the term $\nabla \cdot \bm{\Pi}$ is usually considered as a small term. \\
+Using the magnetic field with circular cross section $B=B_0/(1+\epsilon \cos\theta)$, we can decompose density, pressure and electrostatic potential into 
+\begin{equation}
+\begin{split}
+    N_z &= \Bar{N}_z(\psi) + \widetilde{N}_z(\theta) \\
+    p &= \Bar{p}(\psi) + \widetilde{p}(\theta) \\
+    \phi &= \bar{\phi}(\psi) + \widetilde{\phi}(\theta)
+\end{split}
+\end{equation}
+where the bar $(\Bar{N}, \Bar{p}, \Bar{\phi})$ is the $\theta$-averaged part of $(N_z, p, \theta)$ and the tilde represents the $\theta$-varying part. Then, Eq.(\ref{parallel_force_balance}) can be recast in first order
+\begin{equation}
+    \frac{\partial \widetilde{p}_\parallel}{\partial \theta} + (\Bar{p}_\perp-\Bar{p}_\parallel)\epsilon \sin\theta = -\Bar{N}_s q_s \frac{\partial \widetilde{\phi}}{\partial \theta}
+\end{equation}
+With the assumption that the temperature is almost constant along a magnetic field line due to large parallel heat conduction $(\kappa_\parallel / \kappa_\perp) \gg 1$, we can use the relations $\Bar{p}_\parallel \simeq \bar{N}_s k T_\parallel$, $\widetilde{p}_\parallel \simeq \widetilde{N}_s k T_\parallel$ and $\Bar{p}_\perp \simeq \Bar{N}_s k T_\perp$. Using these relations, the above equation can be integrated over $\theta$
+\begin{equation}
+\boxed{\frac{\widetilde{N}_s}{\Bar{N}_s}-\epsilon \Big(\frac{T_\perp}{T_\parallel}\Big)\cos\theta = -\frac{q_s \widetilde{\phi}}{k T_\parallel}}
+\end{equation}

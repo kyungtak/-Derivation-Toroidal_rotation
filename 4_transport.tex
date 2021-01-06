@@ -1,0 +1,105 @@
+\chapter{The effect of toroidal rotation on impurity transport}
+\minitoc
+In general, neoclassical transport in tokamak is establisehd in the limit where the ion thermal speed is much larger than the toroidal rotation speed of the plasma. However, large toroidal rotation is possible especially during the neutral beam injection. \\
+In this section, we will demonstrate how toroidal rotation in tokamak can modify impurity transport. Usually, strong toroidal rotation has been found to increase neoclassical transport. The analytical derivation will be given below to prove this effect. The following derivation is strongly inspired by \citep{Hinton85, Helander07, Catto87}.
+\begin{equation}
+    u_\parallel \nabla f_{a1} - C_a(f_{a1}) = -u_\parallel \overbar{f}_{a0}\sum_{j=1}^3 A_j \nabla_\parallel \alpha_j
+\end{equation}
+where $f_{a1}=\overbar{f}_a-\overbar{f}_{a0}=\overbar{f}_{a*}+\overbar{g}_a-\overbar{f}_{a0}$ and the thermodynamic forces are defined
+\begin{align}
+    A_1 &= \frac{d\ln{N_a}}{d\psi} + \frac{d\ln{T_a}}{d\psi} \\
+    A_2 &= \frac{d\ln{T_a}}{d\psi} \\
+    A_3 &= \frac{d\ln{\omega}}{d\psi}
+\end{align}
+and we have written
+\begin{align}
+    \alpha_1 &=\frac{m_a R \overbar{v}_\varphi}{e_a} = \frac{m_a}{e_a}\Big(\omega R^2 + \frac{I u_\parallel}{B}\Big) \\
+    \alpha_2 &= \big (\frac{H}{T_a}-\frac{5}{2}\Big)\alpha_1 \\
+    \alpha_3 &= \frac{m_a^2 \omega R^2 \overbar{v}_\varphi^2}{2e_aT_a} = \frac{m_a^2 \omega}{2 e_a T_a}\Bigg[\Big(\omega R^2 + \frac{I u_\parallel}{B}\Big) + \frac{\mu R^2 B_p^2}{m_a B}\Bigg]
+\end{align}
+Therefore, the rotation shaer $A_3=d\ln{\omega}/d\psi$ enters naturally as a thrid driving force for transport in addition to the pressure and temperature gradients.
+
+\section{Step 1}
+The kinetic energy in the rotating frame is equal to
+\begin{align}
+    \frac{m_a u^2}{2} &= \frac{m_a(\bm{v}-\bm{V}_0)^2}{2} = \frac{m_a (\bm{v}^2+\bm{V}_0^2)}{2}-m_a \bm{v} \cdot \bm{V}_0 \nonumber \\ 
+    &= \frac{m_a(v^2+R^2 \omega^2)}{2}-m_a v_\varphi R \omega \nonumber \\
+    &= \frac{m_a(v^2+R^2 \omega^2)}{2} + mRv_\varphi \frac{d\phi_{-1}}{d\psi} \nonumber \\
+    &= \boxed{\frac{m_a}{2}(v^2+R^2\omega^2) + e_a  \frac{d\phi_{-1}}{d\psi}(\psi-\psi^*)} \label{rotating_kinetic_energy}
+\end{align}
+where we used the relations 
+\begin{align}
+    \bm{V}_0 &= \omega(\psi)R \hat{\varphi} = -R \frac{d\phi_{-1}}{d\psi} \hat{\varphi} \label{flow} \\
+    \psi^* &= \psi - m_a R v_\varphi / e_a = -p_\varphi / e_a \label{cnst_motion}
+\end{align}
+where Eq.(\ref{cnst_motion}) is a constant of motion due to axysimmetry.\\
+Inserting Eq.(\ref{rotating_kinetic_energy}) into the Maxwellian distribution function in a rotating frame 
+\begin{align}
+    f_{a0}&=n_a \Big( \frac{m_a}{2\pi T_a(\psi)} \Big)^{3/2} \exp{-\frac{m_a u^2}{2T_a(\psi)}} \nonumber \\
+    &= n_a \Big( \frac{m_a}{2\pi T_a(\psi)} \Big)^{3/2} \exp{-\frac{m_a}{2T_a}(v^2+R^2\omega^2)-\frac{e_a}{T_a}\frac{d\phi_{-1}}{d\psi}(\psi-\psi^*)} \nonumber \\
+    &\text{Then, insert $n_a=N_a(\psi,\theta)\exp{\frac{m_a \omega^2 R^2}{2T_a}-\frac{e_a\phi_0}{T_a}}$} \nonumber \\
+    &= N_a(\psi) \Big( \frac{m_a}{2\pi T_a(\psi)} \Big)^{3/2} \exp{-\frac{m_a v^2}{2T_a}-\frac{e_a}{T_a}\frac{d\phi_{-1}}{d\psi}(\psi-\psi^*)-\frac{e_a \phi_0}{T_a}} \nonumber \\
+    &=N_a(\psi) \Big( \frac{m_a}{2\pi T_a(\psi)} \Big)^{3/2} \exp{-\frac{H}{T_a}}
+\end{align}
+where 
+\begin{align}
+    H = \frac{m_a v^2}{2}+e_a\frac{d\phi_{-1}}{d\psi}(\psi-\psi^*)+e_a \phi_0
+\end{align}
+
+The function $H$ we defined is almost, but not quite, a constant of motion to the requisite accuracy. A true constant of motion is
+\begin{align}
+    H_* = \frac{m_a v^2}{2}+e_a[\phi(\psi)-\phi_{-1}(\psi)] \simeq H + e_a \frac{\partial^2 \phi_{-1}}{\partial \psi^2}\frac{(\psi-\psi_*)^2}{2}
+\end{align}
+We now introduce a function which is almost equal to $f_{a0}$ but only depend on constatns of motion.
+\begin{align}
+    f_{a*} = N_a(\psi_*)\Big(\frac{m_a}{2\pi T_a(\psi_*)}\Big)^{3/2}\exp{-\frac{H_*}{T_a(\psi_*)}}
+\end{align}
+Then, we write the distribution functino as $f_a = f_{a*}+g_a$ where $g_a \ll f_{a*}$ so that the Fokker-Planck equation becomes
+\begin{align}
+    \frac{df_a}{dt} &= \frac{\partial f_a}{\partial t} + \dot{z}_k \frac{\partial f_a}{\partial z_k} = \mathcal{C}_a(f_a - f_{a0}) \quad \text{(General form)} \\
+    \frac{d g_a}{dt} &= \mathcal{C}_a(f_{a*}-f_{a0}+g_a) 
+\end{align}
+The drift kinetic equation follows upon gyroaveraging
+\begin{align}
+    v_\parallel \nabla_\parallel \overbar{g}_a = \overbar{\mathcal{C}_a(f_{a*}-f_{a0}+g_a)} = \mathcal{C}_a(\overbar{f_{a*}-f_{a0}+g_a})
+\label{DK}
+\end{align}
+where we have neglected the corss-field drift on the left since $g_a$ is small and the time derivative has been neglected according to the transport ordering \footnote{$\partial / \partial t \sim D/L^2 \sim \delta^2\nu$ where $\delta=\rho/L \ll 1$} and we have used \hl{the rotational invariance of the collision operator}. \\
+Using the facts, 
+\begin{align}
+    \frac{f_{a*}-f_{a0}}{\psi_* - \psi} &\simeq \frac{\partial f_{a0}}{\partial \psi} \\
+    \frac{H_*-H}{\psi_*-\psi} &\simeq \frac{\partial H}{\partial \psi}
+\end{align}
+The difference between $f_{a*}$ and $f_{a0}$ can be written as 
+\begin{align}
+    f_{a*}-f_{a0} &\simeq (\psi_* - \psi)\Bigg[\frac{d\ln{N_a}}{d\psi}+\Big(\frac{H}{T_a}-\frac{3}{2}\Big)\frac{d\ln{T_a}}{d\psi}-\frac{1}{T_a}\frac{\partial H}{\partial \psi}\Bigg]f_{a0} \\
+    &\simeq (\psi_* - \psi)\Bigg[\frac{d\ln{N_a}}{d\psi}+\Big(\frac{H}{T_a}-\frac{3}{2}\Big)\frac{d\ln{T_a}}{d\psi}\Bigg]f_{a0}-\frac{H_*-H}{T_a}f_{a0} \\
+    &=-\frac{m_a R v_\varphi}{e_a}\Bigg[\frac{d\ln{N_a}}{d\psi} + \Big(\frac{H}{T_a}-\frac{3}{2}\Big)\frac{d\ln{T_a}}{d\psi} + \frac{m_a R v_\varphi}{2T_a}\frac{d\omega}{d\psi}\Bigg] f_{a0}
+\end{align}
+where we used the relations Eq.(\ref{flow}, \ref{cnst_motion}) to derive final form. \\
+Also, using $\bm{v}=\omega R \hat{\varphi} + \bm{u}$ with $I=RB_\varphi$, the gyro-average of plasma flow gives 
+\begin{align}
+    \overbar{v_\varphi} &= \frac{I u_\parallel}{RB} + \omega R \nonumber \\
+    \overbar{v_\varphi^2} &= \overbar{(v_\parallel \cdot \hat{\varphi})^2 + (v_\perp \cdot \hat{\varphi})^2} = \Big(\frac{I u_\parallel}{RB}+\omega R \Big)^2 + \frac{v_\perp^2}{2}\frac{B_p^2}{B_2}
+\end{align}
+Then we can finally write Eq.(\ref{DK}) as 
+\begin{equation}
+    u_\parallel \nabla f_{a1} - C_a(f_{a1}) = -u_\parallel \overbar{f}_{a0}\sum_{j=1}^3 A_j \nabla_\parallel \alpha_j
+\end{equation}
+where $f_{a1}=\overbar{f}_a-\overbar{f}_{a0}=\overbar{f}_{a*}+\overbar{g}_a-\overbar{f}_{a0}$ and the thermodynamic forces are defined
+\begin{align}
+    A_1 &= \frac{d\ln{N_a}}{d\psi} + \frac{d\ln{T_a}}{d\psi} \\
+    A_2 &= \frac{d\ln{T_a}}{d\psi} \\
+    A_3 &= \frac{d\ln{\omega}}{d\psi}
+\end{align}
+and we have written
+\begin{align}
+    \alpha_1 &=\frac{m_a R \overbar{v}_\varphi}{e_a} = \frac{m_a}{e_a}\Big(\omega R^2 + \frac{I u_\parallel}{B}\Big) \\
+    \alpha_2 &= \big (\frac{H}{T_a}-\frac{5}{2}\Big)\alpha_1 \\
+    \alpha_3 &= \frac{m_a^2 \omega R^2 \overbar{v}_\varphi^2}{2e_aT_a} = \frac{m_a^2 \omega}{2 e_a T_a}\Bigg[\Big(\omega R^2 + \frac{I u_\parallel}{B}\Big) + \frac{\mu R^2 B_p^2}{m_a B}\Bigg]
+\end{align}
+Therefore, the rotation shaer $A_3=d\ln{\omega}/d\psi$ enters naturally as a thrid driving force for transport in addition to the pressure and temperature gradients.
+
+\section{From Wong's paper}
+The following derivation comes from the seminal paper of \citep{Wong87}. \\
+The neoclassical theory of transport is based on a multiple time scale expansion of the Fokker-Planck equation in the small parameter of gyroradius over plasma scale length. When the toroidal rotation becomes fast enough, \hl{the self-consistent electric field is considered to be larger by one order.} In Hinton's work from \citep{Hinton85}, the derivation of the drift kinetic equation and the expressions of the fluxes was detailed but only in case of pure plasma. Therefore, the formulation is extended to include more than on ion species.

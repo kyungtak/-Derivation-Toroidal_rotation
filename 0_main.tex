@@ -1,0 +1,83 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{natbib} % bibliography style
+\usepackage[french, english]{babel} % Use the Palatino font by default
+\usepackage{tocvsec2}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage[toc, page]{appendix}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{minitoc}
+\usepackage{tocvsec2}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage[toc, page]{appendix}
+\usepackage{url}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage[nottoc]{tocbibind}
+% Add bibliography in table of contents
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage[section]{placeins}
+\usepackage{fancybox,framed}
+\usepackage{cancel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{datetime}
+\usepackage{libertine}
+\usepackage[flushleft]{threeparttable}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{capt-of} % or use the larger `caption` package
+%\usepackage{color, colortbl}
+\usepackage{color, soul}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage{xcolor}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\title{Neoclassical Theory}
+\author{kyungtak LIM }
+\date{11-07-2019 (started)}
+
+\begin{document}
+\dominitoc
+\tableofcontents
+%\input{1_Introduction.tex}
+\input{2_Toroidal_Rotation}
+\input{3_temperature_anisotropy}
+\input{4_transport}
+\newpage
+\appendix
+\medskip
+
+\bibliographystyle{apalike}
+\bibliography{9_bib}
+
+%\input{9_bib.tex}
+%\printbibliography
+
+\end{document}

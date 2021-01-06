@@ -1,0 +1,214 @@
+\chapter{Toroidal rotation on impurity transport}
+\minitoc
+Unlike ions, the toroidal rotation of impurities can be expected to equal, or even higher than its thermal velocities due to their heavy masses, especially during the NBI power injection. Therefore, taking account of its effect is necessary to capture impurity transport in tokamaks clearly. \\
+Toroidal rotating plasma in a tokamak pushes impurities outward of tokamak due to a centrifugal force by changing poloidal density distribution of impurities. \\
+It has been already observed that the Mach number for impurities $M_w$(especially for tungsten) reached up to $M_w \simeq 3$ during NBI pulse operation in JET \citep{Angioni14}.
+
+\section{Derivation}
+\citep{Wong87, Hinton85, Fulop99, Helander98, Wesson97} \\
+The standard neoclassical theory developed by Hirshman assumed the Mach number $M \ll 1$ but this was extended later to include the case $ M \sim \mathcal{O}(1)$ by \citep{Hinton85}.
+
+\begin{equation}
+    n_a(\psi, \theta) = N_a(\psi)\exp{\Bigg(\frac{m_a\omega^2(R^2-R_0^2)}{2T_a}-\frac{e_a\phi}{T_a}\Bigg)}
+\end{equation}
+where $e_a$ is the charge and $R=R_0$ at some point on the flux surface where the electric potential $\phi$ is chosen to be zero. The electric potential is determined via quasi-neutral equation 
+\begin{equation}
+    \sum_a e_an_a(\psi,\theta)=0
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    n_i(\psi,\theta)+\underbrace{\cancel{zn_z(\psi,\theta)}}_{\text{$n_z \ll 1$}}&=n_e(\psi,\theta) \\
+    N_i(\psi)\exp{\frac{m_i\omega^2(R_2-R_0^2)}{2T_i}-\frac{e\phi}{T_i}} &= N_e(\psi)\exp{\cancel{\frac{m_e\omega^2(R^2-R_0^2)}{T_e}}+\frac{e\phi}{T_e}} \\
+    \frac{m_i\omega^2R^2-R_0^2}{2T_i}-\frac{e\phi}{T_i}&=\frac{e\phi}{T_e} \\
+    \frac{m_i\omega^2R^2-R_0^2}{(T_i+T_e)}\frac{T_i+T_e}{2T_i}&= \frac{e\phi}{T_i}+\frac{e\phi}{T_e} \\
+\end{split}
+\end{equation}
+Then,
+\begin{equation}
+    \boxed{\frac{M^2-M_0^2}{2}=\frac{e\phi}{T_e}}
+\end{equation}
+where we used the squared Mach number $M^2 = m_i\omega^2R^2/(T_e+T_i)$. \\
+Then,
+\begin{equation}
+\begin{split}
+    n_z(\psi, \theta) &= N_z(\psi)\exp{\frac{m_z\omega^2(R^2-R_0^2)}{2T_z}-\frac{e_z\phi}{T_z}} \\
+    &= N_z(\psi)\exp{\frac{m_i\omega^2(R^2-R_0^2)}{(T_i+T_e)}\frac{m_z}{m_i}\frac{T_i+T_e}{2Tz}-\frac{e\phi}{T_e}\frac{zT_e}{T_z}} \\
+    &= N_z(\psi)\exp{\frac{z(M^2-M_0^2)}{2}\Big(\frac{T_e+T_i}{T_z}\frac{m_z}{zm_i}-\frac{T_e}{T_z}\Big)}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    M^2-M_0^2 &= \frac{m_i\omega^2}{T_e+T_i}(R^2-R_0^2) \\
+    &=\frac{m_i\omega^2}{T_e+T_i}(2rR_0\cos\theta + r^2\cos^2\theta) \\
+    &= \frac{m_i\omega^2}{T_e+T_i}(2r(R-r)\cos\theta + r^2\cos^2\theta) \\
+    &=\frac{m_i\omega^2}{T_e+T_i}(2\epsilon(R^2-Rr)\cos\theta+r^2\cos^2\theta) \\
+    &\propto \frac{m_i\omega^2}{T_e+T_i}2\epsilon R^2 \propto 2\epsilon M^2 
+\end{split}
+\end{equation}
+
+\iffalse
+Using the relation $R=R_0 + r\cos\theta$ and the inverse aspect ratio $\epsilon=r/R$. 
+The first-order drift kinetic equation
+\begin{equation}
+    v_\parallel\nabla_\parallel\Bigg(f_{a1}+\frac{Iv_\parallel}{\Omega_a}\frac{\partial f_{a0}}{\partial \psi}\Bigg) - \frac{e_av_\parallel E_\parallel}{T_a}f_{a0}=\mathcal{C}_a(f_{a1})
+\end{equation}
+\fi
+
+
+
+
+\section{Density distribution in toroidally rotating plasma}
+\subsection{From the momentum equation}
+The momentum equation
+\begin{equation}
+\begin{split}
+    m_s n_s \frac{d \bm{V}_a}{dt}&=-\nabla p_s- \nabla \cdot \bm{\pi}_s + e_sn_s(\bm{E}+\bm{V}_a \times \bm{B}) + \bm{R}_s \\
+    m_s n_s \bm{V}_s \cdot \nabla \bm{V}_s &= -\nabla p_s -e_s n_s \nabla \Phi + m_i \Omega_i (\bm{V}_s \times B) + \bm{R_s}
+\end{split}
+\end{equation}
+where the time derivative $\partial / \partial t$, the pressure anisotropy $\bm{\pi}_s$ and the frictional force $\bm{R_s}$ was neglected at the lowest order $\delta=\rho/L$. Also, we used the lagrangien derivative 
+\begin{equation}
+    \frac{d}{dt} = \Big( \frac{\partial}{\partial t} + \bm{V_s} \cdot \nabla \bm{V_s}\Big)
+\end{equation}
+at a comoving frame with a velocity $\bm{V}_s$. \\
+The temperature is a flux function, but the density is not. Thus, the above equation can be rewritten 
+\begin{equation}
+    m_s n_s \bm{V}_s \cdot \nabla \bm{V}_s = -T_s\nabla n_s -e_s n_s \nabla \Phi + m_i \Omega_i (\bm{V}_s \times B)
+\label{momentum3}
+\end{equation}
+Using the centifugal force $m_s(\bm{V}_s \cdot \nabla) \bm{V}_s = -m_s \omega^2R\nabla R$ where $\omega$ is the toroidal rotation frequency and the projection of Eq.(\ref{momentum3}) gives 
+\begin{equation}
+    -m_s n_s \omega^2 \bm{b} \cdot \nabla \frac{R^2}{2} = -T_s \bm{b} \cdot \nabla n_s -e_s n_s \bm{b} \cdot \nabla \Phi 
+\end{equation}
+\begin{equation}
+\begin{split}
+    T_s \nabla n_s &= m_s n_s \omega^2 \nabla \big( \frac{R^2}{2} \big) - e_s n_s  \nabla \Phi \\
+    \frac{1}{n_s} \nabla n_s &= \frac{m_s \omega^2 \nabla R^2}{2T_s} - \frac{e_s\nabla \Phi}{T_s} \\
+    \nabla{\ln{n_s}} &= \nabla \Bigg[ \frac{m_s \omega^2 R^2}{2T_s} - \frac{e_s \Phi}{T_s}\Bigg]
+\end{split}
+\end{equation}
+Finally, it gives
+\begin{equation}
+    \boxed{n_s(\psi, \theta) = n_0(\psi)\exp{\frac{m_s \omega^2 (R^2-R_0^2)}{2T_s} - \frac{e_s \Phi}{T_s}}}
+\end{equation}
+where $n_0$ is the density at a chosen $R(=R_0)$ where $\Phi$ is set to zero.
+
+\subsection{From the Fokker-Planck (F-P) equation}
+From the paper \citep{Hinton85}, the zeroth-order version of the Fokker-Plnack equation can be written in the moving frame with velocity $V_0$. (Eq.(44) in \citep{Hinton85})
+\begin{equation}
+\begin{split}
+    \frac{\partial f_0}{\partial t} &+ (v_\parallel \bm{b}+\bm{V}_0) \cdot \nabla f_0-\Bigg[\frac{q}{m}\nabla\Phi_0 + \Big(\frac{\partial \bm{V}_0}{\partial t} + (v_\parallel \bm{b} + \bm{V}_0)\Big)\cdot \nabla \bm{V}_0 \Bigg] \cdot \bm{b} \frac{\partial f_0}{\partial v_\parallel} \\
+    & -\frac{v_\perp^2}{2}(\bm{b} \cdot \nabla \ln{B}) \Big(\frac{\partial f_0}{\partial v_\parallel} - \frac{v_\parallel}{v_\perp} \frac{\partial f_0}{\partial v_\perp}\Big) - \frac{v_\perp}{2}\big[\nabla \cdot \bm{V}_0 - \bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}\big]\frac{\partial f_0}{\partial v_\perp} = \mathcal{C} 
+\label{FP_equation}
+\end{split}
+\end{equation}
+We approximate $f_0$ with a bi-Maxwellian as in \citep{Choe95}.
+\begin{equation}
+    f_0 \simeq n_0 \Big(\frac{m}{2\pi}\Big)^{3/2} \frac{1}{T_\perp T_\parallel^{1/2}}\exp{-\frac{m}{2}\frac{v_\perp^2}{T_\perp}}\exp{-\frac{m}{2}\frac{v_\parallel^2}{T_\parallel}}
+\end{equation}
+In the absence of external heating system, such as NBI, ICRH, the collision operator ensures that $f_0$ is Maxwellian with $T_\perp = T_\parallel$. \\
+Using the derivative of $f_0$ with respect to spatial, velocities coordinate : 
+\begin{equation}
+\begin{split}
+    \nabla f_0 &= f_0 \Big [ \frac{\nabla n_0}{n_0} - \frac{\nabla T_\perp}{T_\perp} - \frac{1}{2}\frac{\nabla T_\parallel}{T_\parallel} + \frac{mv_\perp^2}{2} \frac{\nabla T_\perp}{T_\perp^2} + \frac{m v_\parallel^2}{2} \frac{\nabla T_\parallel}{T_\parallel^2} \Big] \\
+    \frac{\partial f_0}{\partial v_\parallel} &= -\frac{mv_\parallel}{T_\parallel}f_0 \\
+    \frac{\partial f_0}{\partial v_\perp}&= -\frac{mv_\perp}{T_\perp}f_0
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    \underbrace{(v_\parallel \bm{b}+\bm{V}_0) \cdot \nabla f_0}_{\text{=A}}-\underbrace{\Bigg[\frac{q}{m}\nabla\Phi_0 + \Big(\frac{\partial \bm{V}_0}{\partial t} + (v_\parallel \bm{b} + \bm{V}_0)\Big)\cdot \nabla \bm{V}_0 \Bigg] \cdot \bm{b} \frac{\partial f_0}{\partial v_\parallel}}_\text{=B} \\
+     -\underbrace{\frac{v_\perp^2}{2}(\bm{b} \cdot \nabla \ln{B}) \Big(\frac{\partial f_0}{\partial v_\parallel} - \frac{v_\parallel}{v_\perp} \frac{\partial f_0}{\partial v_\perp}\Big)}_{\text{=C}} - \underbrace{\frac{v_\perp}{2}\big[\nabla \cdot \bm{V}_0 - \bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}\big]\frac{\partial f_0}{\partial v_\perp}}_{\text{=D}} = \mathcal{C} 
+\end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        A &= (v_\parallel \bm{b}+\bm{V}_0) \cdot \nabla f_0 \\
+        &=(v_\parallel \bm{b}+\bm{V}_0) \cdot f_0 \Big [ \frac{\nabla n_0}{n_0} - \frac{\nabla T_\perp}{T_\perp} - \frac{1}{2}\frac{\nabla T_\parallel}{T_\parallel} + \frac{mv_\perp^2}{2} \frac{\nabla T_\perp}{T_\perp^2} + \frac{m v_\parallel^2}{2} \frac{\nabla T_\parallel}{T_\parallel^2} \Big]\\
+        &= \bm{V_0} \cdot \Big [ \frac{\nabla n_0}{n_0} - \frac{\nabla T_\perp}{T_\perp} - \frac{1}{2}\frac{\nabla T_\parallel}{T_\parallel} \Big] + v_\parallel \bm{b} \cdot \Big [ \frac{\nabla n_0}{n_0} - \frac{\nabla T_\perp}{T_\perp} - \frac{1}{2}\frac{\nabla T_\parallel}{T_\parallel}\Big] \\
+        &+ v_\parallel v_\perp^2 \bm{b} \cdot \Big[\frac{m}{2}\frac{\nabla T_\perp}{T_\perp^2}\Big] + v_\perp^2 \Big[ \frac{m\bm{V}_0}{2} \cdot \frac{\nabla T_\perp}{T_\perp^2}\Big] + v_\parallel^3 \Big[\bm{b} \cdot \frac{m}{2}\frac{\nabla T_\parallel}{T_\parallel}\Big] + v_\parallel^2 \big[\bm{V}_0 \cdot \frac{m}{2}\frac{\nabla T_\parallel}{T_\parallel^2}\big]\Big]
+    \label{FP_A}
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        B&=\Bigg[\frac{q}{m}\nabla\Phi_0 + \Big(\frac{\partial \bm{V}_0}{\partial t} + (v_\parallel \bm{b} + \bm{V}_0)\Big)\cdot \nabla \bm{V}_0 \Bigg] \cdot \bm{b} \frac{\partial f_0}{\partial v_\parallel} \\
+        &= -\Bigg[\frac{q}{m}\nabla\Phi_0 + (v_\parallel \bm{b} + \bm{V}_0)\cdot \nabla \bm{V}_0 \Bigg] \cdot \bm{b}  \frac{mv_\parallel}{T_\parallel}f_0 \\
+        & = v_\parallel \Big[-\frac{q\nabla \Phi_0}{T_\parallel} -(\bm{V}_0 \cdot \nabla \bm{V}_0) \frac{m}{T_\parallel}\Big] - v_\parallel^2 \Big[\bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b} \frac{m}{T_\parallel}\Big]
+    \label{FP_B}    
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        C&=\frac{v_\perp^2}{2}(\bm{b} \cdot \nabla \ln{B}) \Big(\frac{\partial f_0}{\partial v_\parallel} - \frac{v_\parallel}{v_\perp} \frac{\partial f_0}{\partial v_\perp}\Big) \\
+        &= \frac{v_\perp^2}{2}(\bm{b} \cdot \nabla \ln{B}) \Big(-\frac{mv_\parallel}{T_\parallel}f_0 + \frac{v_\parallel}{v_\perp} \frac{mv_\perp}{T_\perp}\Big) \\
+        &= v_\parallel v_\perp^2 \Big[ -\frac{1}{2}(\bm{b}\cdot \frac{\nabla B}{B})\frac{m}{T_\parallel} + \frac{1}{2}(\bm{b} \cdot \frac{\nabla B}{B}) \frac{m}{T_\perp}\Big]
+    \label{FP_C}    
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        D&=\frac{v_\perp}{2}\big[\nabla \cdot \bm{V}_0 - \bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}\big]\frac{\partial f_0}{\partial v_\perp} \\
+        &=-\frac{v_\perp}{2}\big[\nabla \cdot \bm{V}_0 - \bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}\big]\frac{mv_\perp}{T_\perp} \\
+        &= v_\perp^2 \big[ -\frac{\nabla \cdot \bm{V}_0}{2}\frac{m}{T_\perp}+\frac{(\bm{b} \cdot \bm{V}_0 \cdot \bm{b})}{2}\frac{m}{T_\perp}\big]
+    \label{FP_D}
+    \end{split}
+\end{equation}
+In order that Eq.(\ref{FP_equation}) is satisfied for all range of velocities, the coefficients of $(v_\perp^m v_\parallel^n)$ should be zero. \\
+From Eq.(\ref{FP_A}, \ref{FP_B}, \ref{FP_B} and \ref{FP_D}), we can write
+\begin{equation}
+    \text{For} \,\, v_\parallel : \boxed{\bm{b} \cdot \Big [ \frac{\nabla n_0}{n_0} - \frac{\nabla T_\perp}{T_\perp} - \frac{1}{2}\frac{\nabla T_\parallel}{T_\parallel}+\frac{q\nabla \Phi_0}{T_\parallel} +(\bm{V}_0 \cdot \nabla \bm{V}_0) \frac{m}{T_\parallel}\Big] =0}
+\label{v_par}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \text{For} \,\, v_\parallel v_\perp^2 : &\bm{b} \cdot \Big[ \frac{m}{2} \frac{\nabla T_\perp}{T_\perp^2} + \frac{\nabla B}{B}\frac{m}{2 T_\parallel} - \frac{\nabla B}{B}\frac{m}{2T_\perp}\Big] \\
+    &= \boxed{\bm{b} \cdot \Big[ \frac{\nabla T_\perp}{T_\perp} + \Big(\frac{T_\perp}{T_\parallel}-1\Big)\frac{\nabla B}{B}\Big] = 0}
+\label{v_par_perp2}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \text{For} \,\, v_\parallel^2 : &\big[ \bm{V}_0 \cdot \frac{m}{2}\frac{\nabla T_\parallel}{T_\parallel^2} + (\bm{b} \cdot (\nabla \bm{V}_0 \cdot \bm{b}) \frac{m}{T_\parallel} \big] \\
+    &= \boxed{\big[ \frac{\bm{V}_0}{2} \cdot \frac{\nabla T_\parallel}{T_\parallel} + (\bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}) \frac{m}{T_\parallel}\big] = 0}
+    \label{v_par2}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    \text{For} \,\, v_\perp^2 : &\big[\frac{m\bm{V}_0}{2} \cdot \frac{\nabla T_\perp}{T_\perp^2} + \frac{\nabla \cdot \bm{V}_0}{2}\frac{m}{T_\perp} - \frac{(\bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b})}{2}\frac{m}{T_\perp}\big] \\
+    &= \boxed{\big[ \bm{V}_0 \cdot \frac{\nabla T_\perp}{T_\perp} + \nabla \cdot \bm{V}_0 -(\bm{b} \cdot \nabla \bm{V}_0 \cdot \bm{b}) \big]=0}
+    \label{v_perp2}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    \text{For} \,\, v_\parallel^3 : &\Big[\bm{b} \cdot \frac{m}{2}\frac{\nabla T_\parallel}{T_\parallel}\Big] \\
+    &= \boxed{\bm{b} \cdot \nabla T_\parallel = 0}
+    \label{v_par3}
+\end{split}
+\end{equation}
+The first equation Eq.(\ref{v_par}) is the parallel momentum equation. Eq.(\ref{v_par3}) explains that temperature is constant along the magnetic surface and Eq.(\ref{v_par_perp2}) states that the parallel gradient of $T_\perp$ to be controlled by the mirror force. \\
+Using the parallel momentum equation Eq.(\ref{v_par}) with Eq.(\ref{v_par3}), we can write 
+\begin{equation}
+\begin{split}
+    \frac{\nabla_\parallel n_0}{n_0} &= \frac{\nabla_\parallel T_\perp}{T_\perp} -q\frac{\nabla_\parallel \Phi_0}{T_\parallel}+\frac{m}{T_\parallel}(\bm{V}_0 \cdot \nabla)\bm{V}_0 \\
+    &= \frac{\nabla_\parallel T_\perp}{T_\perp} -q\frac{\nabla_\parallel \Phi_0}{T_\parallel}-\frac{m\omega^2\nabla_\parallel R^2}{2T_\parallel} \\
+    \nabla_\parallel(\ln{n_0})&=\nabla_\parallel \Big( \ln{T_\perp} - \frac{q\Phi_0}{T_\parallel}-\frac{m\omega^2R^2}{2T_\parallel}\Big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+    \boxed{n(\psi,\theta) = n_0(\psi)\frac{T_\perp(\psi,\theta)}{T_{\perp 0}(\psi)}\exp{-\frac{Ze\Phi_0}{T_\parallel}-\frac{m\omega^2(R^2-R_0^2)}{2T_\parallel}}}
+\label{density_distribution}
+\end{equation}
+where we used $\nabla_\parallel = \bm{b} \cdot \nabla$, $q=Ze$ and the centrifugal force $m(\bm{V}_0 \cdot \nabla)\bm{V}_0=-m \omega^2 R\nabla R$. \\
+From Eq.(\ref{density_distribution}), it is claer that the temperature anisotropy and toroidal rotation can have an influence on poloidal density asymmetries.
