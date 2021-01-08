@@ -142,3 +142,34 @@ where the subscripts indicates the order in $\epsilon \sim \nu_i / \Omega_i$ and
     \frac{\partial}{\partial t} = \frac{\partial}{\partial t_0} + \frac{\partial}{\partial t_1} + \frac{\partial}{\partial t_2} + \cdots
 \end{align}
 with the different terms of order $\bm{v_i}/L, \epsilon \bm{v_i}/L , \epsilon^2 \bm{v_i}/L$.
+\subsection{Transport across magnetic surfaces}
+The transport across magnetic surfaces must occur on the $t_2$ time scale, with $\partial / \partial t \sim \epsilon^2 \rho_i / L \sim \nu_{ii}(\rho_i / L)^2$.\\
+The fluxes that are needed to determine the changes in density, temperature, and toroidal angular velocity caused by radial transport are the particle flux, energy flux, and momentum flux to second order in ion gyroradius over gradient  length. \\
+The second order flux
+\begin{align}
+    \Gamma_2 &= -\frac{c}{e}\Big\langle \int d^3\bm{v} mRv_\varphi \mathcal{C}^1 f_1 \Big\rangle \\
+    \Pi_2 &= -\frac{mc}{e}\Big\langle \int d^3\bm{v}\frac{1}{2}mR^2v_\varphi^2\mathcal{C}^1f_1\Big\rangle \\
+    Q_2 &= -\omega \Pi_2 -\frac{mc}{e}\Big\langle \int d^3\bm{v}Rv_\varphi \big(\frac{1}{2}mv^2+e\Tilde{\phi}_0\big)\mathcal{C}^1f_1\Big\rangle
+\end{align}
+Here, we define the second order heat flux as \begin{align}
+    q_2 = Q_2 -\omega \Pi_2 -\frac{5}{2}T\Gamma_2
+\end{align}
+These fluxes may be expressed explicitly as sums of neoclassical and classical parts by using $f_1 = \overbar{f_1}+\widetilde{f_1}$ and expressing the integrands in terms of $v_\parallel, v_\perp$ and $\xi$ and making the choice $\hat{e_1}=\nabla \Psi / \abs{\nabla \Psi}$. Then, we obtain
+\begin{align}
+    \Gamma_2 &=\overbar{\Gamma}_2 - \frac{mc}{e}\Big \langle \int d^3\bm{v}R(\hat{e}_\varphi \cdot \hat{e}_2)v_\perp \sin{\xi} \mathcal{C}^1 f_1 \Big\rangle \\
+    q_2&=\overbar{q}_2 - \frac{mc}{e}\Big\langle \int d^3\bm{v} R (\hat{e}_\varphi \cdot \hat{e}_2)v_\perp \sin{\xi}\big(mE-\frac{5}{2}T\big)\mathcal{C}^1f_1\Big\rangle \\
+    \Pi_2 &= \overbar{\Pi}_2 - \frac{mc}{e}\Big\langle \int d^3\bm{v}\frac{m}{2}R^2[2(\omega R + v_\parallel \hat{\bm{b}}\cdot \hat{e}_\varphi)v_\perp(\hat{e_2}\cdot \hat{e}_\varphi) \times \sin{\xi} -(v_\perp^2/2)(\hat{e}_2\cdot \hat{e}_\varphi)^2 \cos{2\xi}]\mathcal{C}^1f_1\Big\rangle
+\end{align}
+where the neoclassical part 
+\begin{align}
+    \overbar{\Gamma_2} &= -\Big\langle \int d^3\bm{v} \alpha_1 \mathcal{C}^1 \overbar{f}_1 \Big\rangle \\
+    \overbar{q}_2 &= -\Big\langle \int d^3\bm{v}T\alpha_2 \mathcal{C}^1 \overbar{f}_1 \Big\rangle \\
+    \overbar{\Pi}_2 &= -\Big\langle \int d^3\bm{v} \frac{T}{\omega}\alpha_3 \mathcal{C}^1 \overbar{f}_1 \Big\rangle
+\end{align}
+where the quantities $\alpha_1, \alpha_2$ and $\alpha_3$ defined by 
+\begin{align}
+    \alpha_1 &= (mc/e)[I(v_\parallel /B) + \omega R^2] \\
+    \alpha_2 &= (mE/T - 5/2)\alpha_1 \\
+    \alpha_3 &= \frac{mc\omega}{ev_i^2}\Big[\Big(\frac{Iv_\parallel}{B}+\omega R^2\Big)^2 + \mu \frac{\abs{\nabla \Psi}^2}{B}\Big]
+\end{align}
+The values of alpha defined here are equal to those described in Helander's book. Therefore, deriving Wong's paper in detail may help me to understand the neoclassical transport influenced by toroidal rotation and its possible effect.
