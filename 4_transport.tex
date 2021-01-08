@@ -104,3 +104,41 @@ Therefore, the rotation shaer $A_3=d\ln{\omega}/d\psi$ enters naturally as a thr
 The following derivation comes from the seminal paper of \citep{Wong87}. \\
 The neoclassical theory of transport is based on a multiple time scale expansion of the Fokker-Planck equation in the small parameter of gyroradius over plasma scale length. When the toroidal rotation becomes fast enough, \hl{the self-consistent electric field is considered to be larger by one order.} In Hinton's work from \citep{Hinton85}, the derivation of the drift kinetic equation and the expressions of the fluxes was detailed but only in case of pure plasma. Therefore, the formulation is extended to include more than on ion species. \\
 In his work, the Fokker-Planck equations are expanded, leading to the linearized drift kinetic equations, then the flux averaged transport equations are derived and the expressions for the neoclassical fluxes obtained. 
+\subsection{Expansion of Fokker-Planck equation}
+The neoclassical theory of transport is based on a multiple time scale expansion of FP equation in the small parameter. The strong rotation theory can make difference of \hl{the self consistent electric field which need to be considered to be larger by one order.}\\
+The Fokker-Planck equation for the ion distribution function is 
+\begin{align}
+    \frac{\partial f_i}{\partial t}+\bm{v} \cdot \nabla f_i + \frac{e}{m_i}\Big( \bm{E} + \frac{\bm{v}}{c}\times \bm{B}\Big) \cdot \frac{\partial f}{\partial \bm{v}} = \mathcal{C} + \mathcal{S}
+\end{align}
+where $\mathcal{C}$ is the collision operator and $\mathcal{S}$ is a source term, representing the effects of neutral
+beam injection. \\
+We transform to a local reference frame, moving with the velocity $\bm{u}_0$ relative to the lab frame, where the velocity is 
+\begin{align}
+    \bm{v}' = \bm{v}-\bm{u}_0(\bm{x},t)
+\end{align}
+Using the derivative relation
+\begin{align}
+    \frac{\partial f}{\partial t} &= \frac{\partial f}{\partial \bm{v}'} \frac{\partial \bm{v}'}{\partial t} = \frac{\partial f}{\partial \bm{v}'}\Big(\frac{\partial \bm{v}}{\partial t} - \frac{\partial \bm{u}_0}{\partial t}\Big) \nonumber \\
+    \nabla f &= \frac{\partial f}{\partial \bm{v}'}\frac{\partial \bm{v}'}{\partial x} = \frac{\partial f}{\partial \bm{v}'}(\nabla \bm{v} - \nabla \bm{v'}) \nonumber \\
+    \frac{\partial f}{\partial \bm{v}} &= \frac{\partial f}{\partial \bm{v}'}\frac{\partial \bm{v}'}{\partial \bm{v}}=\frac{\partial f}{\partial \bm{v}'}
+\end{align}
+Then, the transformed FP equation becomes : 
+\begin{align}
+    \frac{\partial f}{\partial t} + (\bm{v}' + \bm{u}_0) \cdot \nabla 'f + \frac{e}{m}\Big( \bm{E} + (\bm{v}'+\bm{u}_0) \times \frac{\bm{B}}{c}\Big)\cdot \frac{\partial f}{\partial \bm{v}'} \nonumber \\
+    -\Big(\frac{\partial \bm{u}_0}{\partial t}+ (\bm{v}'+\bm{u}_0)\cdot (\nabla \bm{u}_0)\Big) \cdot \frac{\partial f}{\partial \bm{v}'}= \mathcal{C} + \mathcal{S}
+\end{align}
+where we used the following relations : 
+\begin{align}
+    \frac{\partial f}{\partial \bm{v}'} \nabla \bm{v} &= \nabla 'f \qquad \text{(why?)} \\
+    \frac{\partial f}{\partial \bm{v}'} \frac{\partial \bm{v}}{\partial t} &= \frac{\partial f}{\partial t} \qquad \text{(why?)}
+\end{align}
+and here $\nabla '$ denotes the spatial gradient holding $\bm{v}'$ fixed. \\
+Now, the distribution function is expanded
+\begin{align}
+    f = f_0 + f_1 + f_2 + \cdots
+\end{align}
+where the subscripts indicates the order in $\epsilon \sim \nu_i / \Omega_i$ and the time dependence is assumed to occur on well separated time scales, so that the time derivative may be formally expanded
+\begin{align}
+    \frac{\partial}{\partial t} = \frac{\partial}{\partial t_0} + \frac{\partial}{\partial t_1} + \frac{\partial}{\partial t_2} + \cdots
+\end{align}
+with the different terms of order $\bm{v_i}/L, \epsilon \bm{v_i}/L , \epsilon^2 \bm{v_i}/L$.
